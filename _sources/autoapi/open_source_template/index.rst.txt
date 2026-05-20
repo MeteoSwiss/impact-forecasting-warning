@@ -20,5 +20,7 @@ Submodules
    :maxdepth: 1
 
    /autoapi/open_source_template/main/index
+   /autoapi/open_source_template/pipeline_wind_impact_forecast/index
+   /autoapi/open_source_template/util_functions/index
 
 

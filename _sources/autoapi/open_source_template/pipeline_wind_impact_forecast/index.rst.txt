@@ -1,0 +1,186 @@
+open_source_template.pipeline_wind_impact_forecast
+==================================================
+
+.. py:module:: open_source_template.pipeline_wind_impact_forecast
+
+.. autoapi-nested-parse::
+
+   Pipeline for WiSchaWa based on OGD data
+
+   Created on Tue Apr 2026
+   @author: Valentin Gebhart, vgebhart@ethz.ch
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   open_source_template.pipeline_wind_impact_forecast.path_to_warningregion_shapes
+   open_source_template.pipeline_wind_impact_forecast.path_to_canton_shapes
+   open_source_template.pipeline_wind_impact_forecast.lead_times
+   open_source_template.pipeline_wind_impact_forecast.lead_times_window
+   open_source_template.pipeline_wind_impact_forecast.model
+   open_source_template.pipeline_wind_impact_forecast.nwp_var
+   open_source_template.pipeline_wind_impact_forecast.reftime
+   open_source_template.pipeline_wind_impact_forecast.req_det
+   open_source_template.pipeline_wind_impact_forecast.windfield_det
+   open_source_template.pipeline_wind_impact_forecast.req_pert
+   open_source_template.pipeline_wind_impact_forecast.windfield_pert
+   open_source_template.pipeline_wind_impact_forecast.da_forecast
+   open_source_template.pipeline_wind_impact_forecast.reference_time
+   open_source_template.pipeline_wind_impact_forecast.ref_time_str
+   open_source_template.pipeline_wind_impact_forecast.valid_time_strs
+   open_source_template.pipeline_wind_impact_forecast.valid_time_prints
+   open_source_template.pipeline_wind_impact_forecast.base_strs
+   open_source_template.pipeline_wind_impact_forecast.base_strs_output_data
+   open_source_template.pipeline_wind_impact_forecast.da_forecast
+   open_source_template.pipeline_wind_impact_forecast.da_forecast
+   open_source_template.pipeline_wind_impact_forecast.haz_fc
+   open_source_template.pipeline_wind_impact_forecast.exp_ch
+   open_source_template.pipeline_wind_impact_forecast.impf_set
+   open_source_template.pipeline_wind_impact_forecast.imp_fc
+   open_source_template.pipeline_wind_impact_forecast.constant_exposure_gdf
+   open_source_template.pipeline_wind_impact_forecast.constant_exposure_gdf
+   open_source_template.pipeline_wind_impact_forecast.elev
+   open_source_template.pipeline_wind_impact_forecast.constant_exposure
+   open_source_template.pipeline_wind_impact_forecast.imp_fun_low
+   open_source_template.pipeline_wind_impact_forecast.imp_fun_high
+   open_source_template.pipeline_wind_impact_forecast.Hbw_impf_set
+   open_source_template.pipeline_wind_impact_forecast.imp_warnings
+   open_source_template.pipeline_wind_impact_forecast.gdf_warningregions
+   open_source_template.pipeline_wind_impact_forecast.gdf_warningregions
+   open_source_template.pipeline_wind_impact_forecast.gdf_warningregions
+   open_source_template.pipeline_wind_impact_forecast.gdf_warningregions
+   open_source_template.pipeline_wind_impact_forecast.gdf_cantons
+   open_source_template.pipeline_wind_impact_forecast.gdf_cantons
+   open_source_template.pipeline_wind_impact_forecast.gdf_cantons
+   open_source_template.pipeline_wind_impact_forecast.gdf_cantons
+   open_source_template.pipeline_wind_impact_forecast.gdf_cantons
+   open_source_template.pipeline_wind_impact_forecast.shift_center_of_mass_by_name
+   open_source_template.pipeline_wind_impact_forecast.forcast_day
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   open_source_template.pipeline_wind_impact_forecast.from_schwierz
+   open_source_template.pipeline_wind_impact_forecast.from_welker
+
+
+Module Contents
+---------------
+
+.. py:data:: path_to_warningregion_shapes
+   :value: 'Uninferable/warning_regions/Warningregions.shp'
+
+
+.. py:data:: path_to_canton_shapes
+   :value: 'Uninferable/ch_shapefile/swissTLMRegio_KANTONSGEBIET_LV95.shp'
+
+
+.. py:data:: lead_times
+
+.. py:data:: lead_times_window
+
+.. py:data:: model
+   :value: 'ogd-forecasting-icon-ch2'
+
+
+.. py:data:: nwp_var
+   :value: 'VMAX_10M'
+
+
+.. py:data:: reftime
+   :value: 'latest'
+
+
+.. py:data:: req_det
+
+.. py:data:: windfield_det
+
+.. py:data:: req_pert
+
+.. py:data:: windfield_pert
+
+.. py:data:: da_forecast
+
+.. py:data:: reference_time
+   :value: ''
+
+
+.. py:data:: ref_time_str
+   :value: ''
+
+
+.. py:data:: valid_time_strs
+
+.. py:data:: valid_time_prints
+
+.. py:data:: base_strs
+
+.. py:data:: base_strs_output_data
+
+.. py:data:: da_forecast
+
+.. py:data:: da_forecast
+
+.. py:data:: haz_fc
+
+.. py:data:: exp_ch
+
+.. py:function:: from_schwierz(impf_id=1)
+
+   Generate the impact function of Schwierz et al. 2010, doi:10.1007/s10584-009-9712-1
+
+
+.. py:function:: from_welker(impf_id=1)
+
+   Return the impact function of Welker et al. 2021, doi:10.5194/nhess-21-279-2021
+
+
+.. py:data:: impf_set
+
+.. py:data:: imp_fc
+
+.. py:data:: constant_exposure_gdf
+
+.. py:data:: constant_exposure_gdf
+
+.. py:data:: elev
+
+.. py:data:: constant_exposure
+
+.. py:data:: imp_fun_low
+
+.. py:data:: imp_fun_high
+
+.. py:data:: Hbw_impf_set
+
+.. py:data:: imp_warnings
+
+.. py:data:: gdf_warningregions
+
+.. py:data:: gdf_warningregions
+
+.. py:data:: gdf_warningregions
+
+.. py:data:: gdf_warningregions
+
+.. py:data:: gdf_cantons
+
+.. py:data:: gdf_cantons
+
+.. py:data:: gdf_cantons
+
+.. py:data:: gdf_cantons
+
+.. py:data:: gdf_cantons
+
+.. py:data:: shift_center_of_mass_by_name
+
+.. py:data:: forcast_day
+
