@@ -11,6 +11,7 @@ include = ["CHANGELOG.rst"]
 python = ">=3.10,<3.13"
 cartopy = "^0.23.0"
 climada = "^6.0.0"
+gdal = "==3.8.4"
 geopandas = "^1.0.0"
 matplotlib = "^3.9.0"
 numpy = "^1.26.0"
