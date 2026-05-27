@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for your interest in contributing to **Open Source Template**! We welcome contributions from the community and are grateful for your support.
+Thank you for your interest in contributing to **Impact Forecasting & Warning**! We welcome contributions from the community and are grateful for your support.
 
 ## Code of Conduct
 
@@ -52,8 +52,8 @@ Feature suggestions are welcome! Please create an issue using our *feature reque
 1. Clone your fork of the repository:
 
    ```console
-   $ git clone https://github.com/YOUR-USERNAME/open-source-template.git
-   $ cd open-source-template
+   $ git clone https://github.com/YOUR-USERNAME/impact-forecasting-warning.git
+   $ cd impact-forecasting-warning
    ```
 
 2. Install dependencies:
@@ -79,7 +79,7 @@ We use [YAPF](https://github.com/google/yapf) for code formatting with PEP 8 sty
 Format your code before committing:
 
 ```console
-$ poetry run yapf -r -i open_source_template
+$ poetry run yapf -r -i impact_forecasting_warning
 ```
 
 ### Linting with Pylint
@@ -87,7 +87,7 @@ $ poetry run yapf -r -i open_source_template
 Run pylint to check for code quality issues:
 
 ```console
-$ poetry run pylint open_source_template
+$ poetry run pylint impact_forecasting_warning
 ```
 
 The project configuration is in `pyproject.toml`. We disable certain docstring requirements but maintain other quality standards.
@@ -97,7 +97,7 @@ The project configuration is in `pyproject.toml`. We disable certain docstring r
 We enforce type hints throughout the codebase:
 
 ```console
-$ poetry run mypy open_source_template
+$ poetry run mypy impact_forecasting_warning
 ```
 
 All function definitions must include type annotations.
@@ -123,7 +123,7 @@ $ poetry run pytest
 Run tests with coverage:
 
 ```console
-$ poetry run pytest --cov=open_source_template --cov-report=html
+$ poetry run pytest --cov=impact_forecasting_warning --cov-report=html
 ```
 
 ## Documentation
@@ -185,4 +185,4 @@ If you have questions about contributing, please:
 - Review the documentation
 - Create a new issue with your question
 
-Thank you for contributing to Open Source Template!
+Thank you for contributing to Impact Forecasting & Warning!
