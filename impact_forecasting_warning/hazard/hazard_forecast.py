@@ -17,7 +17,7 @@ from climada.hazard.forecast import HazardForecast  # pylint: disable=import-err
 def create_hazard_forecast(da_forecast: xr.DataArray,
                            hazard_type: str,
                            intensity_unit: str,
-                           variable_name: str = None) -> tuple:
+                           variable_name: str | None = None) -> tuple:
     """
     Convert weather forecast data to CLIMADA HazardForecast object.
     

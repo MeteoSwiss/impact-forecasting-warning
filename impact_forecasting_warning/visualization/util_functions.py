@@ -14,16 +14,16 @@ from scipy import stats
 from shapely.affinity import translate
 
 
-def print_large_amounts(x):
+def print_large_amounts(x: float) -> str:
     return (f'{x/1e9:.1f}B'
             if x >= 1e9 else f'{x/1e6:.0f}M' if x >= 1e6 else f'{x/1e3:.0f}k' if x >= 1e3 else f'{x:.0f}')
 
 
 def aggregate_impacts_by_gdf(
-    impact,
-    gdf,
-    agg_func,
-):
+        impact,  # type: ignore[no-untyped-def]
+        gdf,  # type: ignore[no-untyped-def]
+        agg_func,  # type: ignore[no-untyped-def]
+):  # type: ignore[no-untyped-def]
     """
     Aggregate impacts by geographical data frame (GDF) regions.
 
@@ -58,10 +58,10 @@ def aggregate_impacts_by_gdf(
 
 
 def aggregate_exposures_by_gdf(
-    exposure,
-    gdf,
-    agg_func="sum",
-):
+    exposure,  # type: ignore[no-untyped-def]
+    gdf,  # type: ignore[no-untyped-def]
+    agg_func: str = "sum",
+):  # type: ignore[no-untyped-def]
     """
     Aggregate exposures by geographical data frame (GDF) regions.
 
@@ -89,13 +89,13 @@ def aggregate_exposures_by_gdf(
 
 
 def plot_impact_log_hist(
-    imp_fc,
+    imp_fc,  # type: ignore[no-untyped-def]
     bins=None,
     ax=None,
-    fit_gaussian_kernel_for_logs=True,
+    fit_gaussian_kernel_for_logs: bool = True,
     ci_quantiles=None,
-    title=None,
-    impact_label=None,
+    title: str | None = None,
+    impact_label: str | None = None,
     kwargs_hist=None,
     kwargs_cis=None,
     ticks=None,
@@ -275,20 +275,20 @@ def plot_impact_log_hist(
 
 
 def plot_member_piechart_per_region(
-    impact_forecast,
-    gdf_regions,
-    agg_func,
+    impact_forecast,  # type: ignore[no-untyped-def]
+    gdf_regions,  # type: ignore[no-untyped-def]
+    agg_func,  # type: ignore[no-untyped-def]
     bins=None,
     ax=None,
     exposure_for_normalization=None,
-    pie_rel_size=0.1,
-    title=None,
-    cbar_title=None,
+    pie_rel_size: float = 0.1,
+    title: str | None = None,
+    cbar_title: str | None = None,
     cmap=None,
     shift_center_of_mass_by_name=None,
     kwargs_pie=None,
     **kwargs,
-):
+):  # type: ignore[no-untyped-def]
     """
     Plot pie charts for each region showing impact forecast member distributions.
 
@@ -401,17 +401,18 @@ def plot_member_piechart_per_region(
     return ax
 
 
-def plot_impact_polygons(impact,
-                         gdf_regions,
-                         agg_func="max",
-                         exposure_for_normalization=None,
-                         ax=None,
-                         title=None,
-                         warning_thresholds=None,
-                         warning_colors=None,
-                         warning_labels=None,
-                         kwargs_legend=None,
-                         **kwargs):
+def plot_impact_polygons(
+        impact,  # type: ignore[no-untyped-def]
+        gdf_regions,  # type: ignore[no-untyped-def]
+        agg_func: str = "max",
+        exposure_for_normalization=None,
+        ax=None,
+        title: str | None = None,
+        warning_thresholds=None,
+        warning_colors=None,
+        warning_labels=None,
+        kwargs_legend=None,
+        **kwargs):  # type: ignore[no-untyped-def]
     """
     Plot warning polygons based on impact thresholds.
 
@@ -511,14 +512,14 @@ def plot_impact_polygons(impact,
 
 
 def plot_impact_with_region_shapes(
-    impact,
-    gdf_regions,
+    impact,  # type: ignore[no-untyped-def]
+    gdf_regions,  # type: ignore[no-untyped-def]
     ax=None,
-    title=None,
-    cbar_title=None,
+    title: str | None = None,
+    cbar_title: str | None = None,
     cmap=None,
     **kwargs,
-):
+):  # type: ignore[no-untyped-def]
     """
     Plot pie charts for each region showing impact forecast member distributions.
 
