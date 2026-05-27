@@ -11,7 +11,6 @@ Generic hazard forecast creation from weather data.
 from datetime import datetime, timedelta
 import xarray as xr
 
-from climada import CONFIG
 from climada.hazard.forecast import HazardForecast
 
 
@@ -55,11 +54,11 @@ def create_hazard_forecast(da_forecast: xr.DataArray,
 
     # Create output paths
     base_strs = [
-        f"{CONFIG.engine.forecast.plot_dir}/{hazard_type}_C2E_run{ref_time_str}_event{valid_time_str}_Switzerland"
+        f"results/plots/{hazard_type}_C2E_run{ref_time_str}_event{valid_time_str}_Switzerland"
         for valid_time_str in valid_time_strs
     ]
     base_strs_output_data = [
-        f"{CONFIG.engine.forecast.plot_dir}/output_data/{hazard_type}_C2E_run{ref_time_str}_event{valid_time_str}"
+        f"results/output_data/{hazard_type}_C2E_run{ref_time_str}_event{valid_time_str}"
         for valid_time_str in valid_time_strs
     ]
 

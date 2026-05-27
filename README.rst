@@ -83,6 +83,29 @@ Tests are organized into unit and integration tests:
 * **Integration tests**: Test complete workflows and inter-module interactions
 * **Shared fixtures**: Common test data and mocks in ``conftest.py`` (HazardForecast, Exposures, GeoDataFrames, etc.)
 
+Output Structure
+----------------
+
+Pipeline outputs are organized into separate directories:
+
+.. code-block:: text
+
+    results/
+    ├── plots/              # Visualization outputs (JPEG, SVG)
+    │   ├── *_histbin.svg                           # National impact histograms
+    │   ├── *_canton_impact_map.jpeg                # Cantonal pie chart maps
+    │   ├── *_warn_map.jpeg                         # Hazard-based warning maps
+    │   ├── *_impact_warn_map_*.jpeg                # Impact-based warning maps
+    │   ├── *_rel_impact_warn_map_*.jpeg            # Relative impact warning maps
+    │   └── *_impact_map.jpeg                       # Continuous impact maps
+    └── output_data/        # CSV data exports
+        └── *_canton_medians.csv                    # Median impacts per canton
+
+**Output Organization:**
+
+* **plots/**: All visualizations (histograms, maps, charts) in JPEG and SVG formats
+* **output_data/**: Quantitative results exported as CSV files for further analysis
+
 Development Setup with Poetry
 -----------------------------
 
