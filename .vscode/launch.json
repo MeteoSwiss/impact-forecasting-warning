@@ -2,10 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: open_source_template",
+            "name": "Python: impact_forecasting_warning",
             "type": "python",
             "request": "launch",
-            "program": "open_source_template/main.py",
+            "program": "impact_forecasting_warning/pipelines/wind_impact_forecast.py",
             "env": { "PYTHONPATH": "." },
             "justMyCode": false,
             "console": "integratedTerminal"

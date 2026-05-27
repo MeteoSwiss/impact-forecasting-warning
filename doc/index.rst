@@ -1,5 +1,5 @@
-Open Source Template
-====================
+Impact Forecasting & Warning
+============================
 
 .. toctree::
    :maxdepth: 2
