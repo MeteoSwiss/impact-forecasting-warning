@@ -1,0 +1,14 @@
+name: climada_env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - xarray
+  - matplotlib
+  - cartopy
+  - geopandas
+  - pip
+  - pip:
+    - git+https://github.com/CLIMADA-project/climada_python.git@forecast-class

@@ -24,6 +24,18 @@ This project requires CLIMADA's ``forecast-class`` branch (not available on PyPI
 
 **1. Create conda environment and install CLIMADA forecast-class:**
 
+Use the provided ``environment.yml`` file:
+
+.. code-block:: console
+
+    # Create conda environment from environment.yml
+    $ conda env create -f environment.yml
+    $ conda activate climada_env
+
+This installs Python 3.11, all base dependencies (numpy, pandas, xarray, matplotlib, cartopy, geopandas), and CLIMADA's forecast-class branch from GitHub.
+
+**Alternative: Manual installation** (if you need to install CLIMADA in editable mode):
+
 .. code-block:: console
 
     # Create conda environment (miniforge/miniconda/anaconda)
