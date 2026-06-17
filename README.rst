@@ -34,23 +34,6 @@ Use the provided ``environment.yml`` file:
 
 This installs Python 3.11, all base dependencies (numpy, pandas, xarray, matplotlib, cartopy, geopandas, GDAL), and CLIMADA's develop branch from GitHub.
 
-**Alternative: Manual installation** (if you need to install CLIMADA in editable mode):
-
-.. code-block:: console
-
-    # Create conda environment (miniforge/miniconda/anaconda)
-    $ conda create -n climada_env python=3.11 -y
-    $ conda activate climada_env
-
-    # Install base dependencies in conda environment
-    $ conda install -c conda-forge numpy pandas xarray matplotlib cartopy geopandas gdal poetry -y
-
-    # Clone and install CLIMADA develop branch
-    $ cd ~/git_projects  # or your preferred location
-    $ git clone https://github.com/CLIMADA-project/climada_python.git
-    $ cd climada_python
-    $ git checkout develop
-    $ pip install -e .
 
 **2. Configure Poetry to use the conda environment:**
 

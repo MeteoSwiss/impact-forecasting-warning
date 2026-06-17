@@ -4,6 +4,14 @@ channels:
 dependencies:
   - python=3.11
   - poetry
+  # Geospatial stack - keep versions synchronized
+  - gdal=3.8.*
+  - proj>=9.0.0
+  - geos>=3.11.0
+  - rasterio>=1.3.0
+  - fiona>=1.9.0
+  - shapely>=2.0.0
+  # Core scientific packages
   - numpy
   - pandas
   - xarray
@@ -12,6 +20,5 @@ dependencies:
   - geopandas
   - mamba
   - pip
-  - gdal==3.8.*
   - pip:
     - git+https://github.com/CLIMADA-project/climada_python.git@develop
