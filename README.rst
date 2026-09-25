@@ -32,48 +32,28 @@ Use the provided ``environment.yml`` file:
     $ conda env create -n climada_env -f environment.yml
     $ conda activate climada_env
 
-This installs Python 3.11, all base dependencies (numpy, pandas, xarray, matplotlib, cartopy, geopandas, GDAL), and CLIMADA's develop branch from GitHub.
+This installs Python 3.12, all base dependencies (numpy, pandas, xarray, matplotlib, cartopy, geopandas, GDAL), and CLIMADA's develop branch from GitHub.
 
-**Alternative: Manual installation** (if you need to install CLIMADA in editable mode):
+**1b: [optional] installation of CLIMADA in editable mode**
 
 .. code-block:: console
 
-    # Create conda environment (miniforge/miniconda/anaconda)
-    $ conda create -n climada_env python=3.11 -y
-    $ conda activate climada_env
-
-    # Install base dependencies in conda environment
-    $ conda install -c conda-forge numpy pandas xarray matplotlib cartopy geopandas gdal poetry -y
-
     # Clone and install CLIMADA develop branch
     $ cd ~/git_projects  # or your preferred location
-    $ git clone https://github.com/CLIMADA-project/climada_python.git
-    $ cd climada_python
-    $ git checkout develop
-    $ pip install -e .
+    $ git clone https://github.com/CLIMADA-project/climada_python.git --branch develop
+    $ pip install -e climada_python
 
-**2. Configure Poetry to use the conda environment:**
-
-Create a (or use the provided) ``poetry.toml`` file in the project root:
-
-.. code-block:: toml
-
-    [virtualenvs]
-    create = false
-
-This prevents Poetry from creating its own virtual environment and forces it to use the active conda environment.
-
-**3. Install project dependencies with Poetry:**
+**2. Install the project**
 
 .. code-block:: console
 
     $ cd ~/git_projects/impact-forecasting-warning  # back to project directory
     $ conda activate climada_env  # ensure conda env is active
-    $ poetry install
+    $ pip install -e .
 
 This installs all project dependencies (from ``pyproject.toml``) into the conda environment alongside CLIMADA.
 
-**4. Run the pipeline:**
+**3. Run the pipeline:**
 
 Always use the conda environment's Python explicitly to avoid conflicts with pyenv or other Python installations:
 
@@ -129,7 +109,7 @@ Run Tests
 .. code-block:: console
 
     $ conda activate climada_env
-    $ poetry run pytest
+    $ pytest
 
 Or use the conda Python explicitly:
 
@@ -143,8 +123,8 @@ Run Quality Tools
 .. code-block:: console
 
     $ conda activate climada_env
-    $ poetry run pylint impact_forecasting_warning
-    $ poetry run mypy impact_forecasting_warning
+    $ pylint impact_forecasting_warning
+    $ mypy impact_forecasting_warning
 
 Generate Documentation
 ----------------------
@@ -152,7 +132,7 @@ Generate Documentation
 .. code-block:: console
 
     $ conda activate climada_env
-    $ poetry run sphinx-build doc doc/_build
+    $ sphinx-build doc doc/_build
 
 Then open the index.html file generated in *doc/_build/*.
 
@@ -162,7 +142,7 @@ Build Wheels
 .. code-block:: console
 
     $ conda activate climada_env
-    $ poetry build
+    $ build
 
 Project Structure
 =================
