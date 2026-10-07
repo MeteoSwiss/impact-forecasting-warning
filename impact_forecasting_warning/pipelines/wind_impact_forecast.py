@@ -14,7 +14,7 @@ from pathlib import Path
 import numpy as np
 
 from climada.engine import ImpactCalc
-from climada.engine.impact import ImpactForecast
+from climada.engine.impact_forecast import ImpactForecast
 from climada.entity import ImpactFuncSet
 from climada.hazard.forecast import HazardForecast  # pylint: disable=import-error  # TODO: Fix climada.hazard.forecast import
 
