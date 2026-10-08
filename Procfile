@@ -1,2 +1,1 @@
-web: python -m http.server $RENKU_SESSION_PORT
-
+web: bash scripts/run-web-app.sh
