@@ -14,10 +14,7 @@ cat <<EOF >$WD/climada.conf
 EOF
 
 echo install impact-forecasting-warning
-cd $WD/impact-forecasting-warning
-git switch renku
-pip install -e .
-cd -
+pip install -e $WD/impact-forecasting-warning
 
 echo make gpw input file accessible
 mkdir $WD/climada/data -p

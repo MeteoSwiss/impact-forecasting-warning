@@ -174,6 +174,24 @@ The project is organized into the following modules:
 * **pipelines**: Orchestration layer connecting all modules, main entry point
 * **visualization**: Plot generation and spatial aggregation utilities
 
+Scripts Structure
+-----------------
+
+Helper scripts are located here:
+
+.. code-block:: text
+
+    scripts/
+    └── setup-renku-session.sh  # Initialize the environment after launching a session
+
+* **setup-renku-session.sh**: After starting a (Jupyter Lab Environment)[https://renkulab.io/p/evelyn.muehlhofer/impact-oriented-forecasts/sessions/01M1H6S6FZDWNYYYVQDRNP1XYE/start]"
+session at https://renkulab.io/p/evelyn.muehlhofer/impact-oriented-forecasts, this script must be executed to install the `impact-forecasting-warning` package.
+Launch a terminal and run
+
+.. code-block:: console
+
+    $ bash impact-forecasting-warning/scripts/setup-renku-session.sh
+
 Test Structure
 --------------
 
