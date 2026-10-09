@@ -1,6 +1,6 @@
-===========================
+============================
 Impact Forecasting & Warning
-===========================
+============================
 
 A system for forecasting and visualizing weather impact warnings for Switzerland using CLIMADA.
 
@@ -32,31 +32,28 @@ Use the provided ``environment.yml`` file:
     $ conda env create -n climada_env -f environment.yml
     $ conda activate climada_env
 
-This installs Python 3.11, all base dependencies (numpy, pandas, xarray, matplotlib, cartopy, geopandas, GDAL), and CLIMADA's develop branch from GitHub.
+This installs Python 3.12, all base dependencies (numpy, pandas, xarray, matplotlib, cartopy, geopandas, GDAL), and CLIMADA's develop branch from GitHub.
 
+**1b: [optional] installation of CLIMADA in editable mode**
 
-**2. Configure Poetry to use the conda environment:**
+.. code-block:: console
 
-Create a (or use the provided) ``poetry.toml`` file in the project root:
+    # Clone and install CLIMADA develop branch
+    $ cd ~/git_projects  # or your preferred location
+    $ git clone https://github.com/CLIMADA-project/climada_python.git --branch develop
+    $ pip install -e climada_python
 
-.. code-block:: toml
-
-    [virtualenvs]
-    create = false
-
-This prevents Poetry from creating its own virtual environment and forces it to use the active conda environment.
-
-**3. Install project dependencies with Poetry:**
+**2. Install the project**
 
 .. code-block:: console
 
     $ cd ~/git_projects/impact-forecasting-warning  # back to project directory
     $ conda activate climada_env  # ensure conda env is active
-    $ poetry install
+    $ pip install -e .
 
 This installs all project dependencies (from ``pyproject.toml``) into the conda environment alongside CLIMADA.
 
-**4. Run the pipeline:**
+**3. Run the pipeline:**
 
 Always use the conda environment's Python explicitly to avoid conflicts with pyenv or other Python installations:
 
@@ -112,7 +109,7 @@ Run Tests
 .. code-block:: console
 
     $ conda activate climada_env
-    $ poetry run pytest
+    $ pytest
 
 Or use the conda Python explicitly:
 
@@ -126,8 +123,8 @@ Run Quality Tools
 .. code-block:: console
 
     $ conda activate climada_env
-    $ poetry run pylint impact_forecasting_warning
-    $ poetry run mypy impact_forecasting_warning
+    $ pylint impact_forecasting_warning
+    $ mypy impact_forecasting_warning
 
 Generate Documentation
 ----------------------
@@ -135,7 +132,7 @@ Generate Documentation
 .. code-block:: console
 
     $ conda activate climada_env
-    $ poetry run sphinx-build doc doc/_build
+    $ sphinx-build doc doc/_build
 
 Then open the index.html file generated in *doc/_build/*.
 
@@ -145,7 +142,7 @@ Build Wheels
 .. code-block:: console
 
     $ conda activate climada_env
-    $ poetry build
+    $ build
 
 Project Structure
 =================
@@ -176,6 +173,24 @@ The project is organized into the following modules:
 * **vulnerability**: Impact functions defining damage curves and warning levels
 * **pipelines**: Orchestration layer connecting all modules, main entry point
 * **visualization**: Plot generation and spatial aggregation utilities
+
+Scripts Structure
+-----------------
+
+Helper scripts are located here:
+
+.. code-block:: text
+
+    scripts/
+    └── setup-renku-session.sh  # Initialize the environment after launching a session
+
+* **setup-renku-session.sh**: After starting a `Jupyter Lab Environment <https://renkulab.io/p/evelyn.muehlhofer/impact-oriented-forecasts/sessions/01M1H6S6FZDWNYYYVQDRNP1XYE/start>`_
+  session at https://renkulab.io/p/evelyn.muehlhofer/impact-oriented-forecasts, this script must be executed to install the `impact-forecasting-warning` package.
+  Launch a terminal and run
+
+  .. code-block:: console
+
+      $ bash impact-forecasting-warning/scripts/setup-renku-session.sh
 
 Test Structure
 --------------
