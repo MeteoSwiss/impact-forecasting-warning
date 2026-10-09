@@ -1,6 +1,6 @@
-===========================
+============================
 Impact Forecasting & Warning
-===========================
+============================
 
 A system for forecasting and visualizing weather impact warnings for Switzerland using CLIMADA.
 
