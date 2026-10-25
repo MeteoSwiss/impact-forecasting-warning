@@ -1,37 +1,32 @@
-[tool.poetry]
+[project]
 name = "impact-forecasting-warning"
 version = "0.0.0"  # DO NOT SET. The version of the package is always set by the CI/CD pipeline.
 description = "A system for forecasting and visualizing weather impact warnings for Switzerland using CLIMADA."
-license = "BSD-3-Clause"
-authors = ["Michele Cattaneo <michele.cattaneo@meteoswiss.ch>"]
+license = { text = "BSD-3-Clause" }
+authors = [{ name = "Michele Cattaneo", email = "michele.cattaneo@meteoswiss.ch" }]
 readme = "README.rst"
-include = ["CHANGELOG.rst"]
-packages = [{ include = "impact_forecasting_warning" }]
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "earthkit-data>=0.20.0,<0.21.0",
+    "climada",
+    "meteodata-lab>=0.7.2,<0.8.0",
+    "srtm-py>=0.3.0,<0.4.0",
+]
 
-[tool.poetry.dependencies]
-python = ">=3.10,<3.13"
-cartopy = "^0.23.0"
-# climada is installed via conda/mamba (environment.yml) - don't manage with poetry
-earthkit-data = "^0.20.0"
-gdal = ">=3.8.0,<3.8.5"  # Match system GDAL version (Ubuntu apt-get provides 3.8.4)
-geopandas = "^1.0.0"
-matplotlib = "^3.9.0"
-meteodata-lab = "^0.7.2"
-numpy = "^1.26.0"
-scipy = "^1.14.0"
-shapely = "^2.0.0"
-srtm-py = "^0.3.0"
-xarray = "^2024.9.0"
+[project.optional-dependencies]
+dev = [
+    "mypy>=1.15.0,<2.0.0",
+    "pydata-sphinx-theme>=0.16.1,<0.17.0",
+    "pylint>=3.3.5,<4.0.0",
+    "pytest>=8.3.5,<9.0.0",
+    "pytest-cov>=6.0.0,<7.0.0",
+    "sphinx>=8.1.3,<9.0.0",
+    "sphinx-autoapi>=3.6.0,<4.0.0",
+    "yapf>=0.43.0,<0.44.0",
+]
 
-[tool.poetry.group.dev.dependencies]
-mypy = "^1.15.0"
-pydata-sphinx-theme = "^0.16.1"
-pylint = "^3.3.5"
-pytest = "^8.3.5"
-pytest-cov = "^6.0.0"
-sphinx = "^8.1.3"
-sphinx-autoapi = "^3.6.0"
-yapf = "^0.43.0"
+[tool.setuptools]
+packages = ["impact_forecasting_warning"]
 
 [tool.yapf]
 based_on_style = "pep8"
@@ -66,5 +61,5 @@ disallow_untyped_defs = true
 omit = ["test/**",  "doc/**"]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
